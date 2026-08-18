@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: Inter, ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { @apply bg-paper text-slateink; margin: 0; }
+  button, input, textarea, select { font: inherit; }
+}
+
+@layer components {
+  .shell { @apply min-h-screen bg-paper text-slateink; }
+  .dark-shell { @apply min-h-screen bg-[#0b1120] text-slate-200; }
+  .surface { @apply rounded-2xl border border-slate-200/70 bg-white shadow-soft; }
+  .dark-surface { @apply rounded-2xl border border-slate-700/60 bg-slate-800/40; }
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.16em]; }
+  .field-label { @apply mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-slate-400; }
+}
+
+@keyframes reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.animate-reveal { animation: reveal .4s ease-out both; }
+
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+.animate-fadein { animation: fadein .6s ease-out both; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+::-webkit-scrollbar-track { background: transparent; }
